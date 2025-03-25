@@ -48,7 +48,7 @@ def search_book(library):
         title = input("Enter the title to search for: ")
         for book in library:
             if book["title"].lower() == title.lower():
-                print(f"Matching Books:\n{book}")
+                print(f"Matching Books:\n{book["title"]} by {book["author"]} ({book["year"]}) - {book["genre"]} - {'Read' if book["read"] else 'Not Read'}")
                 return
             print(f"No books found with title '{title}'.")
     elif choice == "2":
@@ -76,6 +76,11 @@ def display_statistics(library):
     print(f"Percentage read: {read_count/total_books * 100}%")
 
      
+def display_library(library):
+    for book in library:
+        
+        print("Your Library:")
+        print(f"{book["title"]} by {book["author"]} ({book["year"]}) - {book["genre"]} - {'Read' if book["read"] else 'Not Read'}")
     
 def main():
     library = load_library()
