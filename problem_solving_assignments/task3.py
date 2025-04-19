@@ -1,11 +1,37 @@
-def digits_sum(num: int) -> int:
-    sum: int = 0
-
-    for i in str(num):
-        sum += int(i)
-        
-    return sum
+#
 
 
-res: int = digits_sum(2345)
-print(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+list1 = [1, 2, 3, 4, 5]
+
+num = 2
+
+print(num in list1)
+
+
+
+
+
