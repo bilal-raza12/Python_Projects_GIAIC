@@ -126,7 +126,7 @@ elif choice == "Retrieve Data":
             else:
                 encrypted_text = st.selectbox("🔐 Select Encrypted Entry", entries)
                 passkey = st.text_input("🔑 Enter Your Passkey", type="password")
-
+                # 
                 if st.button("🔓 Decrypt"):
                     salt = base64.b64decode(users[st.session_state.current_user]["salt"])
                     key = generate_key(passkey, salt)
@@ -135,6 +135,7 @@ elif choice == "Retrieve Data":
                         decrypted = f.decrypt(encrypted_text.encode()).decode()
                         st.success(f"✅ Decrypted Data: {decrypted}")
                         st.session_state.failed_attempts = 0
+                        # 
                     except:
                         st.session_state.failed_attempts += 1
                         attempts_left = 3 - st.session_state.failed_attempts
@@ -147,3 +148,7 @@ elif choice == "Retrieve Data":
 elif choice == "Logout":
     st.session_state.current_user = None
     st.success("🚪 You have been logged out.")
+
+
+
+
